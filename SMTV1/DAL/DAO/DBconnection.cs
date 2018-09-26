@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SMTV1.DAL.DAO
+{
+    class DBconnection
+    {
+        public static SqlConnection OpenConnection()
+        {
+            SqlConnection connection = new SqlConnection();
+            string srvrLink = @"Data source=DESKTOP-GRJM49J\SQLEXPRESS;Database=SMTV1;Integrated Security=SSPI";
+            connection.ConnectionString = srvrLink;
+            connection.Open();
+            return connection;
+        }
+    }
+}
